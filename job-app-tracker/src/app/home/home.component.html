@@ -1,2 +1,6 @@
 <p>The homepage akshan!</p>
-<li *ngFor="let i of jobApplications">{{ i }}</li>
+<div *ngFor="let i of jobApplications">
+    <p>{{ i.position }}</p>
+    <p>{{ i.company }}</p>
+    <p>{{ i.updatedOn }}</p>
+</div>
