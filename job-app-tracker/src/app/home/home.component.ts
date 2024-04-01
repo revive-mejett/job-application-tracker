@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { JobApplication } from '../common/types/JobApplication';
+import { JobApplication } from '../common/types/jobApplication';
 
 @Component({
   selector: 'app-home',
