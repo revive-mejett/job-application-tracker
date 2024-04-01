@@ -1,2 +1,25 @@
 <p>The homepage akshan!</p>
-<li *ngFor="let i of jobApplications">{{ i }}</li>
+<table>
+    <tr>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Location</th>
+        <th>Employment Type</th>
+        <th>Commute</th>
+        <th>Stage</th>
+        <th>DateApplied</th>
+        <th>UpdatedOn</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let i of jobApplications">
+        <td>{{ i.company }}</td>
+        <td>{{ i.position }}</td>
+        <td>{{ i.location }}</td>
+        <td>{{ i.employmentType }}</td>
+        <td>{{ i.commute }}</td>
+        <td>{{ i.stage }}</td>
+        <td>{{ i.dateApplied.getMonth()+1 }}/{{ i.dateApplied.getDay() }}/{{ i.dateApplied.getFullYear() }}</td>
+        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() }}/{{ i.updatedOn.getFullYear() }}</td>
+        <td>{{ i.status }}</td>
+    </tr>
+</table>
