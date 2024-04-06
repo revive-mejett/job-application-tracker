@@ -23,3 +23,9 @@
         <td>{{ i.status }}</td>
     </tr>
 </table>
+<form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="applyForm">
+    <input type="text" formControlName="company">
+    <button type="submit" [disabled]="!form.form.valid">
+        Add new job application
+    </button>
+</form>
