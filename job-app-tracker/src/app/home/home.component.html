@@ -1,4 +1,5 @@
 <p>The homepage akshan!</p>
+<h2>Your Job Applications</h2>
 <table>
     <tr>
         <th>Company</th>
@@ -23,8 +24,40 @@
         <td>{{ i.status }}</td>
     </tr>
 </table>
+<h2>Add a job application</h2>
 <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="applyForm">
-    <input type="text" formControlName="company">
+    <div>
+        <label for="company">Company</label>
+        <input type="text" id="company" formControlName="company">
+    </div>
+    <div>
+        <label for="position">Position</label>
+        <input type="text" id="position" formControlName="position">
+    </div>
+
+    <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" formControlName="location">
+    </div>
+
+    <div>
+        <label for="employmentType">Employment Type</label>
+        <input type="text" id="employmentType" formControlName="employmentType">
+    </div>
+
+    <div>
+        <label for="commute">Commute</label>
+        <input type="text" id="commute" formControlName="commute">
+    </div>
+
+    <div>
+        <label for="status">Status</label>
+        <input type="text" id="status" formControlName="status">
+    </div>
+    
+    
+    
+    
     <button type="submit" [disabled]="!form.form.valid">
         Add new job application
     </button>

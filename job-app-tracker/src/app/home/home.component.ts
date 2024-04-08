@@ -15,13 +15,13 @@ export class HomeComponent {
   jobApplications : JobApplication[] = []
 
   applyForm = new FormGroup({
-    company: new FormControl(""),
-    // position: new FormControl(""),
-    // location: new FormControl(""),
-    // employmentType: new FormControl("Full-time"),
-    // commute: new FormControl("On-site"),
-    // stage: new FormControl("1"),
-    // status: new FormControl("Not Applied"),
+    company: new FormControl(),
+    position: new FormControl(),
+    location: new FormControl(),
+    employmentType: new FormControl("Full-time"),
+    commute: new FormControl("On-site"),
+    stage: new FormControl("1"),
+    status: new FormControl(),
   })
 
 
@@ -71,6 +71,12 @@ export class HomeComponent {
   }
 
   onSubmit() {
-    console.log(this.applyForm.value.company ?? "")
+    console.log(this.applyForm.value.company ?? "[Untitled]")
+    console.log(this.applyForm.value.position ?? "[Untilted Position]")
+    console.log(this.applyForm.value.location ?? "[No location given]")
+    console.log(this.applyForm.value.employmentType ?? "Full-time")
+    console.log(this.applyForm.value.commute ?? "On-site")
+    console.log(this.applyForm.value.stage ?? "[Untilted Job]")
+    console.log(this.applyForm.value.status ?? "Not Applied")
   }
 }
