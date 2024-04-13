@@ -69,14 +69,4 @@ export class HomeComponent {
   addItem(company : string, position : string, location : string, employmentType : string, commute : string, stage : string) {
     console.log(company, position, location, employmentType, commute, stage)
   }
-
-  onSubmit() {
-    console.log(this.applyForm.value.company ?? "[Untitled]")
-    console.log(this.applyForm.value.position ?? "[Untilted Position]")
-    console.log(this.applyForm.value.location ?? "[No location given]")
-    console.log(this.applyForm.value.employmentType ?? "Full-time")
-    console.log(this.applyForm.value.commute ?? "On-site")
-    console.log(this.applyForm.value.stage ?? "[Untilted Job]")
-    console.log(this.applyForm.value.status ?? "Not Applied")
-  }
 }
