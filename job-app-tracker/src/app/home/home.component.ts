@@ -69,4 +69,8 @@ export class HomeComponent {
   addItem(company : string, position : string, location : string, employmentType : string, commute : string, stage : string) {
     console.log(company, position, location, employmentType, commute, stage)
   }
+
+  onSubmit() {
+    console.log(this.applyForm.value)
+  }
 }
