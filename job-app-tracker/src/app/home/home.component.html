@@ -19,8 +19,8 @@
         <td>{{ i.employmentType }}</td>
         <td>{{ i.commute }}</td>
         <td>{{ i.stage }}</td>
-        <td>{{ i.dateApplied.getMonth()+1 }}/{{ i.dateApplied.getDay() }}/{{ i.dateApplied.getFullYear() }}</td>
-        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() }}/{{ i.updatedOn.getFullYear() }}</td>
+        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDay() + 1 : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
+        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() + 1 }}/{{ i.updatedOn.getFullYear() }}</td>
         <td>{{ i.status }}</td>
     </tr>
 </table>
@@ -40,20 +40,33 @@
         <input type="text" id="location" formControlName="location">
     </div>
 
-    <div>
-        <label for="employmentType">Employment Type</label>
-        <input type="text" id="employmentType" formControlName="employmentType">
-    </div>
+    
+    <label for="employmentType">Employment Type</label>
+    <select id="employmentType" formControlName="employmentType" value="Full-time">
+        <option value="Full-time" selected="true">Full-time</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Contract">Contract</option>
+        <option value="Freelance">Freelance</option>
+        <option value="Internship">Internship</option>
+    </select>
 
-    <div>
-        <label for="commute">Commute</label>
-        <input type="text" id="commute" formControlName="commute">
-    </div>
+    <label for="commute">Commute</label>
+    <select id="commute" formControlName="commute" value="On-site">
+        <option value="On-site" selected="true">On-site</option>
+        <option value="Remote">Remote</option>
+        <option value="Hybrid">Hybrid</option>
+    </select>
 
-    <div>
-        <label for="status">Status</label>
-        <input type="text" id="status" formControlName="status">
-    </div>
+    <label for="status">Status</label>
+    <select id="status" formControlName="status" value="Not Applied">
+        <option value="Not Applied" selected="true">Not Applied</option>
+        <option value="Applied">Applied</option>
+        <option value="Interviewing">Interviewing</option>
+        <option value="Offer Received">Offer Received</option>
+        <option value="Accepted Offer">Accepted Offer</option>
+        <option value="Widthdrawn">Widthdrawn</option>
+        <option value="Rejected">Rejected</option>
+    </select>
     
     
     
