@@ -19,8 +19,8 @@
         <td>{{ i.employmentType }}</td>
         <td>{{ i.commute }}</td>
         <td>{{ i.stage }}</td>
-        <td>{{ i.dateApplied.getMonth()+1 }}/{{ i.dateApplied.getDay() }}/{{ i.dateApplied.getFullYear() }}</td>
-        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() }}/{{ i.updatedOn.getFullYear() }}</td>
+        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDay() + 1 : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
+        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() + 1 }}/{{ i.updatedOn.getFullYear() }}</td>
         <td>{{ i.status }}</td>
     </tr>
 </table>
