@@ -7,10 +7,10 @@
         <th>Location</th>
         <th>Employment Type</th>
         <th>Commute</th>
-        <th>Stage</th>
         <th>DateApplied</th>
         <th>UpdatedOn</th>
         <th>Status</th>
+        <th>Notes</th>
     </tr>
     <tr *ngFor="let i of jobApplications">
         <td>{{ i.company }}</td>
@@ -18,10 +18,10 @@
         <td>{{ i.location }}</td>
         <td>{{ i.employmentType }}</td>
         <td>{{ i.commute }}</td>
-        <td>{{ i.stage }}</td>
-        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDay() + 1 : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
-        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() + 1 }}/{{ i.updatedOn.getFullYear() }}</td>
+        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDay() : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
+        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() }}/{{ i.updatedOn.getFullYear() }}</td>
         <td>{{ i.status }}</td>
+        <td>{{ i.notes }}</td>
     </tr>
 </table>
 <h2>Add a job application</h2>
@@ -68,7 +68,10 @@
         <option value="Rejected">Rejected</option>
     </select>
     
-    
+    <div>
+        <label for="notes">Add note</label>
+        <input type="text" id="notes" formControlName="notes">
+    </div>
     
     
     <button type="submit" [disabled]="!form.form.valid">

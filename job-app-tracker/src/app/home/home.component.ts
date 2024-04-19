@@ -20,8 +20,8 @@ export class HomeComponent {
     location: new FormControl(),
     employmentType: new FormControl("Full-time"),
     commute: new FormControl("On-site"),
-    stage: new FormControl(["1"]),
     status: new FormControl("Not Applied"),
+    notes: new FormControl(""),
   })
 
 
@@ -36,7 +36,7 @@ export class HomeComponent {
         location: "Montreal",
         employmentType: "Full-time",
         commute: "On-site",
-        stage: ["1", "2"],
+        notes: ["Sample note 1", "Sample note 2, its a remote position"],
         status: "Not Applied",
         dateApplied: new Date(),
         updatedOn: new Date(),
@@ -47,7 +47,7 @@ export class HomeComponent {
         location: "Montreal",
         employmentType: "Full-time",
         commute: "On-site",
-        stage: ["1", "2"],
+        notes: ["Test note 1", "Ghosted test note"],
         status: "Not Applied",
         dateApplied: new Date(),
         updatedOn: new Date(),
@@ -58,7 +58,7 @@ export class HomeComponent {
         location: "Montreal",
         employmentType: "Full-time",
         commute: "On-site",
-        stage: ["1", "2"],
+        notes: ["this is a fake posting, test data"],
         status: "Not Applied",
         dateApplied: new Date(),
         updatedOn: new Date(),
@@ -66,7 +66,7 @@ export class HomeComponent {
     ]
   }
 
-  addItem(company: string, position: string, location: string, employmentType: EmploymentType, commute: CommuteType, stage: string[], status : ApplicationStatus) {
+  addItem(company: string, position: string, location: string, employmentType: EmploymentType, commute: CommuteType, notes: string[], status : ApplicationStatus) {
     console.log("called");
     
     this.jobApplications.unshift({
@@ -75,8 +75,8 @@ export class HomeComponent {
       location: location,
       employmentType: employmentType,
       commute: commute,
-      stage: stage,
-      status: "Not Applied",
+      notes: notes,
+      status: status,
       dateApplied: new Date(),
       updatedOn: new Date(),
     })
@@ -89,9 +89,9 @@ export class HomeComponent {
       formValues.position?.trim() ?? "[Unnamed Position]",
       formValues.location?.trim() ?? "[No location provided]",
       formValues.employmentType?.trim() as EmploymentType ?? "Full-time",
-      formValues.commute?.trim() as CommuteType ?? "Full-time",
-      formValues.stage!,
-      formValues.status?.trim() as ApplicationStatus ?? "Full-time"
+      formValues.commute?.trim() as CommuteType ?? "On-site",
+      formValues.notes!.trim() !== "" ? [formValues.notes!.trim()] : ["N/A"],
+      formValues.status?.trim() as ApplicationStatus ?? "Not Applied"
     )
   }
 }

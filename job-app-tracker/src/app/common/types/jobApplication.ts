@@ -9,7 +9,7 @@ export interface JobApplication {
     location: string,
     employmentType: EmploymentType,
     commute: CommuteType,
-    stage: string[],
+    notes: string[],
     status: ApplicationStatus
     dateApplied: Date | undefined, // i dont like dates,
     updatedOn: Date
