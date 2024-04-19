@@ -76,7 +76,7 @@ export class HomeComponent {
       employmentType: employmentType,
       commute: commute,
       stage: stage,
-      status: "Not Applied",
+      status: status,
       dateApplied: new Date(),
       updatedOn: new Date(),
     })
