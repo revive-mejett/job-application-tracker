@@ -18,8 +18,8 @@
         <td>{{ i.location }}</td>
         <td>{{ i.employmentType }}</td>
         <td>{{ i.commute }}</td>
-        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDay() : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
-        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDay() }}/{{ i.updatedOn.getFullYear() }}</td>
+        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDate() : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
+        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDate() }}/{{ i.updatedOn.getFullYear() }}</td>
         <td>{{ i.status }}</td>
         <td>{{ i.notes }}</td>
     </tr>
