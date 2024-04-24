@@ -1,0 +1,15 @@
+@import "variables";
+td {
+    background-color: $col-accent;
+}
+
+.job-app-list {
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+
+    .job-app-item {
+        display: flex;
+        flex-direction: row;
+    }
+}

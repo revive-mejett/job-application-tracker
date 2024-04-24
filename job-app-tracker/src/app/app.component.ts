@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
   standalone: true,
   imports: [HomeComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'job-app-tracker';
