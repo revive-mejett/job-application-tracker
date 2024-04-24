@@ -1,4 +1,21 @@
-<h2>Your Job Applications</h2>
+<section>
+    <h2>Your Job Applications</h2>
+    <div class="job-app-list">
+        <div *ngFor="let i of jobApplications" class="job-app-item">
+            <div>{{ i.company }}</div>
+            <div>{{ i.position }}</div>
+            <div>{{ i.location }}</div>
+            <div>{{ i.employmentType }}</div>
+            <div>{{ i.commute }}</div>
+            <div>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDate() : ""
+                }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</div>
+            <div>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDate() }}/{{ i.updatedOn.getFullYear() }}</div>
+            <div>{{ i.status }}</div>
+            <div>{{ i.notes }}</div>
+        </div>
+    </div>
+</section>
+
 <table>
     <tr>
         <th>Company</th>
@@ -17,7 +34,8 @@
         <td>{{ i.location }}</td>
         <td>{{ i.employmentType }}</td>
         <td>{{ i.commute }}</td>
-        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDate() : "" }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
+        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDate() : "" }}/{{
+            i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
         <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDate() }}/{{ i.updatedOn.getFullYear() }}</td>
         <td>{{ i.status }}</td>
         <td>{{ i.notes }}</td>
@@ -39,7 +57,7 @@
         <input type="text" id="location" formControlName="location">
     </div>
 
-    
+
     <label for="employmentType">Employment Type</label>
     <select id="employmentType" formControlName="employmentType" value="Full-time">
         <option value="Full-time" selected="true">Full-time</option>
@@ -66,13 +84,13 @@
         <option value="Widthdrawn">Widthdrawn</option>
         <option value="Rejected">Rejected</option>
     </select>
-    
+
     <div>
         <label for="notes">Add note</label>
         <input type="text" id="notes" formControlName="notes">
     </div>
-    
-    
+
+
     <button type="submit" [disabled]="!form.form.valid">
         Add new job application
     </button>
