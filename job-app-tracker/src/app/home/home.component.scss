@@ -5,11 +5,24 @@ td {
 
 .job-app-list {
     display: flex;
-    background-color: red;
     flex-direction: column;
 
-    .job-app-item {
-        display: flex;
-        flex-direction: row;
+    .job-list-heading, .job-app-item {
+        display: grid;
+        padding: 0.5em 0;
+        grid-template-columns: repeat(8, 1fr) 40%;
+        border: 1px solid $col-text;
+    }
+
+    .job-list-heading {
+        background-color: $col-blue;
+    }
+
+    .job-app-item:nth-child(2n-1) {
+        background-color: $col-blue-grey;
+    }
+
+    .job-app-item:nth-child(2n) {
+        background-color: $col-blue-grey-lighter;
     }
 }
