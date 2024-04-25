@@ -85,9 +85,9 @@ export class HomeComponent {
   onSubmit() {
     const formValues = this.applyForm.value
     this.addItem(
-      formValues.company?.trim() ?? "[Unnamed Company]",
-      formValues.position?.trim() ?? "[Unnamed Position]",
-      formValues.location?.trim() ?? "[No location provided]",
+      formValues.company?.trim() !== "" ? formValues.company?.trim() : "[Unnamed Company]",
+      formValues.position?.trim() !== "" ? formValues.position?.trim() : "[Unnamed Position]",
+      formValues.location?.trim() !== "" ? formValues.location?.trim() : "[No location provided]",
       formValues.employmentType?.trim() as EmploymentType ?? "Full-time",
       formValues.commute?.trim() as CommuteType ?? "On-site",
       formValues.notes!.trim() !== "" ? [formValues.notes!.trim()] : ["N/A"],

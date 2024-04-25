@@ -1,1 +1,23 @@
 // for mixins
+@import "variables";
+
+@mixin input-field {
+    border: 1px solid $col-blue;
+    padding: 0.25em;
+    color: $col-text;
+    font-size: 100%;
+
+    &:focus {
+        outline: none;
+        border: 1px solid $col-blue-grey-lighter;
+    }
+}
+
+@mixin button-ui {
+    border: none;
+    border-radius: 5px;
+    background-color: $col-accent;
+    padding: 0.25em;
+    color: $col-text;
+    font-size: 100%;
+}

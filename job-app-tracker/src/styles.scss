@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variables";
 
+
 * {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -26,5 +27,12 @@ main {
 section {
     width: 70vw;
     margin: auto;
+    box-shadow: 2px 2px 3px 3px $col-light-blue;
+    padding: 1em;
+    margin: 1em auto;
+}
+
+form label {
+    display: block;
 }
 
