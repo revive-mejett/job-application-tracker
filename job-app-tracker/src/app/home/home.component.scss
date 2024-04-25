@@ -1,4 +1,6 @@
 @import "variables";
+@import "mixins";
+
 td {
     background-color: $col-accent;
 }
@@ -24,5 +26,26 @@ td {
 
     .job-app-item:nth-child(2n) {
         background-color: $col-blue-grey-lighter;
+    }
+}
+
+.create-job-app-section {
+    width: 50vw;
+    .create-job-app-form {
+        
+        label {
+            font-weight: bold;
+        }
+        & div {
+            margin-bottom: 0.5em;
+            input, select {
+                @include input-field;
+                width: 50%;
+            }
+        }
+
+        .btn-add-job-app {
+            @include button-ui;
+        }
     }
 }
