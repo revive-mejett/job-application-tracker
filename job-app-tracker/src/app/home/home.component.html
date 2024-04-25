@@ -1,6 +1,17 @@
 <section>
     <h2>Your Job Applications</h2>
     <div class="job-app-list">
+        <div class="job-list-heading">
+            <div>Company</div>
+            <div>Position</div>
+            <div>Location</div>
+            <div>Employment Type</div>
+            <div>Commute</div>
+            <div>Date Applied</div>
+            <div>Updated On</div>
+            <div>Application Status</div>
+            <div>Note(s)</div>
+        </div>
         <div *ngFor="let i of jobApplications" class="job-app-item">
             <div>{{ i.company }}</div>
             <div>{{ i.position }}</div>
@@ -16,31 +27,6 @@
     </div>
 </section>
 
-<table>
-    <tr>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Location</th>
-        <th>Employment Type</th>
-        <th>Commute</th>
-        <th>DateApplied</th>
-        <th>UpdatedOn</th>
-        <th>Status</th>
-        <th>Notes</th>
-    </tr>
-    <tr *ngFor="let i of jobApplications">
-        <td>{{ i.company }}</td>
-        <td>{{ i.position }}</td>
-        <td>{{ i.location }}</td>
-        <td>{{ i.employmentType }}</td>
-        <td>{{ i.commute }}</td>
-        <td>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDate() : "" }}/{{
-            i.dateApplied ? i.dateApplied.getFullYear() : "" }}</td>
-        <td>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDate() }}/{{ i.updatedOn.getFullYear() }}</td>
-        <td>{{ i.status }}</td>
-        <td>{{ i.notes }}</td>
-    </tr>
-</table>
 <h2>Add a job application</h2>
 <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="applyForm">
     <div>
