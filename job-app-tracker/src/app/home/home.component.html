@@ -12,17 +12,8 @@
             <div>Application Status</div>
             <div>Note(s)</div>
         </div>
-        <div *ngFor="let i of jobApplications" class="job-app-item">
-            <div>{{ i.company }}</div>
-            <div>{{ i.position }}</div>
-            <div>{{ i.location }}</div>
-            <div>{{ i.employmentType }}</div>
-            <div>{{ i.commute }}</div>
-            <div>{{ i.dateApplied ? i.dateApplied.getMonth()+1 : "" }}/{{ i.dateApplied ? i.dateApplied.getDate() : ""
-                }}/{{ i.dateApplied ? i.dateApplied.getFullYear() : "" }}</div>
-            <div>{{ i.updatedOn.getMonth()+1 }}/{{ i.updatedOn.getDate() }}/{{ i.updatedOn.getFullYear() }}</div>
-            <div>{{ i.status }}</div>
-            <div>{{ i.notes }}</div>
+        <div *ngFor="let jobapp of jobApplications">
+            <app-jobapplication [jobapp]="jobapp"></app-jobapplication>
         </div>
     </div>
 </section>
