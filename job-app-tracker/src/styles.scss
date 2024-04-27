@@ -22,6 +22,15 @@ header {
 
 main {
     margin: auto;
+
+    .background-img {
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        top: 0;
+        z-index: -99999;
+        overflow: hidden;
+    }
 }
 
 section {
@@ -30,6 +39,7 @@ section {
     box-shadow: 2px 2px 3px 3px $col-light-blue;
     padding: 1em;
     margin: 1em auto;
+    background-color: white;
 }
 
 form label {
