@@ -1,0 +1,13 @@
+<div class="job-app-item">
+    <div>{{ jobapp.company }}</div>
+    <div>{{ jobapp.position }}</div>
+    <div>{{ jobapp.location }}</div>
+    <div>{{ jobapp.employmentType }}</div>
+    <div>{{ jobapp.commute }}</div>
+    <div>{{ jobapp.dateApplied ? jobapp.dateApplied.getMonth()+1 : "" }}/{{ jobapp.dateApplied ?
+        jobapp.dateApplied.getDate() : ""
+        }}/{{ jobapp.dateApplied ? jobapp.dateApplied.getFullYear() : "" }}</div>
+    <div>{{ jobapp.updatedOn.getMonth()+1 }}/{{ jobapp.updatedOn.getDate() }}/{{ jobapp.updatedOn.getFullYear() }}</div>
+    <div>{{ jobapp.status }}</div>
+    <div>{{ jobapp.notes }}</div>
+</div>

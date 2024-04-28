@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApplicationStatus, CommuteType, EmploymentType, JobApplication } from '../common/types/jobApplication';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { JobapplicationComponent } from '../jobapplication/jobapplication.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, ReactiveFormsModule],
+  imports: [RouterOutlet, CommonModule, ReactiveFormsModule, JobapplicationComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss', '../../styles.scss']
 })
