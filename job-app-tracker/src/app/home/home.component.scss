@@ -9,7 +9,7 @@ td {
     display: flex;
     flex-direction: column;
 
-    .job-list-heading, .job-app-item {
+    .job-list-heading {
         display: grid;
         padding: 0.5em 0;
         grid-template-columns: repeat(8, 1fr) 40%;
@@ -20,11 +20,11 @@ td {
         background-color: $col-blue;
     }
 
-    .job-app-item:nth-child(2n-1) {
+    .job-app-item-container:nth-child(2n-1) {
         background-color: $col-blue-grey;
     }
-
-    .job-app-item:nth-child(2n) {
+    
+    .job-app-item-container:nth-child(2n) {
         background-color: $col-blue-grey-lighter;
     }
 }

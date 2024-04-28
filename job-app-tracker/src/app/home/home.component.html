@@ -12,9 +12,9 @@
             <div>Application Status</div>
             <div>Note(s)</div>
         </div>
-        <div *ngFor="let jobapp of jobApplications">
-            <app-jobapplication [jobapp]="jobapp"></app-jobapplication>
-        </div>
+        <ng-container *ngFor="let jobapp of jobApplications" class="job-app-list-component">
+            <app-jobapplication [jobapp]="jobapp" class="job-app-item-container"></app-jobapplication>
+        </ng-container>
     </div>
 </section>
 
