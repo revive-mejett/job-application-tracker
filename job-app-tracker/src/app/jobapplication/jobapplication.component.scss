@@ -3,7 +3,7 @@
 .job-app-item {
     display: grid;
     padding: 0.5em 0;
-    grid-template-columns: repeat(8, 1fr) 40%;
+    grid-template-columns: repeat(8, 1fr) 30% 100px;
     border: 1px solid $col-text;
 }
 
