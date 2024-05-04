@@ -10,4 +10,25 @@
     <div>{{ jobapp.updatedOn.getMonth()+1 }}/{{ jobapp.updatedOn.getDate() }}/{{ jobapp.updatedOn.getFullYear() }}</div>
     <div>{{ jobapp.status }}</div>
     <div>{{ jobapp.notes }}</div>
+    <div *ngIf="!isEditing">
+        <button (click)="onClick()">Edit</button>
+    </div>
+</div>
+<div *ngIf="isEditing">
+    <div>
+        <label for="status"></label>
+        <select id="status" formControlName="status" #statusField [value]="jobapp.status">
+            <option value="Not Applied" selected="true">Not Applied</option>
+            <option value="Applied">Applied</option>
+            <option value="Interviewing">Interviewing</option>
+            <option value="Offer Received">Offer Received</option>
+            <option value="Accepted Offer">Accepted Offer</option>
+            <option value="Widthdrawn">Widthdrawn</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Ghosted">Ghosted</option>
+        </select>
+    </div>
+    <button (click)="updateItem(statusField.value)">
+        Update Job App
+    </button>
 </div>

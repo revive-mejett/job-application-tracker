@@ -1,6 +1,6 @@
 export type EmploymentType = "Full-time" | "Part-time" | "Contract" | "Freelance" | "Internship"
 export type CommuteType = "On-site" | "Remote" | "Hybrid"
-export type ApplicationStatus = "Not Applied" | "Applied" | "Interviewing" | "Offer Received" | "Accepted Offer" | "Widthdrawn" | "Rejected"
+export type ApplicationStatus = "Not Applied" | "Applied" | "Interviewing" | "Offer Received" | "Accepted Offer" | "Widthdrawn" | "Rejected" | "Ghosted"
 
 
 export interface JobApplication {
