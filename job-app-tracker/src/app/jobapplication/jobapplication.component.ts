@@ -20,9 +20,15 @@ export class JobapplicationComponent {
     this.isEditing = true
   }
 
-  updateItem(newStatus : string) {
+  updateItem(newStatus : string, noteInput : string) {
     this.jobapp.status = newStatus as ApplicationStatus
-    this.isEditing = !this.isEditing
+    this.isEditing = false
     this.jobapp.updatedOn = new Date(2022,0,16)
+    this.jobapp.notes.push(noteInput)
+    console.log(this.jobapp.notes)
+  }
+
+  cancelUpdate() {
+    this.isEditing = false
   }
 }
