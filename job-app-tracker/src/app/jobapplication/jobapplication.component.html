@@ -9,14 +9,23 @@
         }}/{{ jobapp.dateApplied ? jobapp.dateApplied.getFullYear() : "" }}</div>
     <div>{{ jobapp.updatedOn.getMonth()+1 }}/{{ jobapp.updatedOn.getDate() }}/{{ jobapp.updatedOn.getFullYear() }}</div>
     <div>{{ jobapp.status }}</div>
-    <div>{{ jobapp.notes }}</div>
+    <div>
+        <ul>
+            <li *ngFor="let note of jobapp.notes">
+                {{note}}
+            </li>
+        </ul>
+    </div>
     <div *ngIf="!isEditing">
         <button (click)="onClick()">Edit</button>
     </div>
 </div>
 <div *ngIf="isEditing">
     <div>
-        <label for="status"></label>
+        <h3>Editing {{ jobapp.company }}, {{ jobapp.position }}</h3>
+    </div>
+    <div>
+        <label for="status">Status</label>
         <select id="status" formControlName="status" #statusField [value]="jobapp.status">
             <option value="Not Applied" selected="true">Not Applied</option>
             <option value="Applied">Applied</option>
@@ -28,7 +37,14 @@
             <option value="Ghosted">Ghosted</option>
         </select>
     </div>
-    <button (click)="updateItem(statusField.value)">
+    <div>
+        <label for="note">Add Note</label>
+        <input type="text" #noteInput>
+    </div>
+    <button (click)="updateItem(statusField.value, noteInput.value)">
         Update Job App
+    </button>
+    <button (click)="cancelUpdate()">
+        Cancel
     </button>
 </div>
