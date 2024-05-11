@@ -1,9 +1,30 @@
 @import "variables";
+@import "mixins";
 
 .job-app-item {
     display: grid;
     padding: 0.5em 0;
     grid-template-columns: repeat(8, 1fr) 30% 100px;
     border: 1px solid $col-text;
+
 }
+
+h3 {
+    margin: 0;
+}
+
+.edit-app-subform {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+button {
+    @include button-ui
+}
+
+input, select {
+    @include input-field
+}
+
+
 
