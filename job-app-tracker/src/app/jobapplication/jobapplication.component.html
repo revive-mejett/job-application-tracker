@@ -16,9 +16,15 @@
             </li>
         </ul>
     </div>
-    <div *ngIf="!isEditing">
-        <button (click)="onClick()">Edit</button>
+    <div>
+        <div *ngIf="!isEditing">
+            <button (click)="onClick()">Edit</button>
+        </div>
+        <div *ngIf="jobapp.status === 'Ghosted'">
+            <button (click)="generateRejectionLetter()">Generate Rejection Letter</button>
+        </div>
     </div>
+
 </div>
 <div *ngIf="isEditing">
     <div>
