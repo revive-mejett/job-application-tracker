@@ -27,7 +27,6 @@ export class JobapplicationComponent {
     this.isEditing = false
     this.jobapp.updatedOn = new Date(2022, 0, 16)
     this.jobapp.notes.push(noteInput)
-    console.log(this.jobapp.notes)
   }
 
   cancelUpdate() {
@@ -42,8 +41,6 @@ export class JobapplicationComponent {
       month: 'long',
       day: 'numeric',
     };
-    console.log(this.jobapp)
-    console.log("generateing rejection...")
     //document
     const wordDoc = new Document({
       sections: [{

@@ -5,11 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class RejectiongeneratorService {
 
-  candidate
-  emailMessages = {}
-  constructor(candidate, company) {
-    this.emailMessages = {
-      heading : "Dear"
-    }
-  }
+  // candidate : string
+  // company : string
+  // emailMessages = {}
+
+  // emailMessages = {
+  //   heading : `Dear ${this.candidate}`,
+
+  // }
+
+
+  // constructor(candidate : string, company : string) {
+  //   this.candidate = candidate
+  //   this.company = company
+    
+  // }
 }
