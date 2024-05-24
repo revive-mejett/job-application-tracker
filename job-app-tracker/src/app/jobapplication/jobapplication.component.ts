@@ -1,22 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ApplicationStatus, JobApplication } from '../common/types/jobApplication';
 import { Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from "file-saver";
+import { RejectiongeneratorService } from '../rejectiongenerator.service';
+import { RejectionMessage } from '../common/types/RejectionMessage';
 
 @Component({
   selector: 'app-jobapplication',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './jobapplication.component.html',
-  styleUrl: './jobapplication.component.scss'
+  styleUrl: './jobapplication.component.scss',
+  providers: [ RejectiongeneratorService ]
 })
 export class JobapplicationComponent {
 
 
   @Input() jobapp!: JobApplication
   isEditing = false
+
+  rejectionGeneratorService = inject(RejectiongeneratorService)
 
   onClick() {
     this.isEditing = true
@@ -41,7 +46,12 @@ export class JobapplicationComponent {
       month: 'long',
       day: 'numeric',
     };
-    //document
+
+    
+    this.rejectionGeneratorService.setEmailMessages("Sova", this.jobapp.company, this.jobapp.position)
+    const emailMessages : RejectionMessage = this.rejectionGeneratorService.getEmailMessages() as RejectionMessage
+
+    //word document
     const wordDoc = new Document({
       sections: [{
         properties: {},
@@ -60,7 +70,7 @@ export class JobapplicationComponent {
           new Paragraph({
             children: [
               new TextRun({
-                text: "Cher/Chère Candidat,",
+                text: emailMessages.heading,
                 size: fontSize,
               }),
             ]
@@ -69,7 +79,7 @@ export class JobapplicationComponent {
           new Paragraph({
             children: [
               new TextRun({
-                text: `Nous vous remercions pour l'intérêt que vous avez manifesté pour le poste de ${this.jobapp.position} au sein de ${this.jobapp.company}. Après avoir examiné attentivement votre candidature, nous regrettons de devoir vous informer que celle-ci n'a pas été retenue pour passer à l'étape suivante du processus de sélection.`,
+                text: emailMessages.firstParagraph,
                 size: fontSize,
               }),
             ]
@@ -78,7 +88,7 @@ export class JobapplicationComponent {
           new Paragraph({
             children: [
               new TextRun({
-                text: `Nous vous souhaitons beaucoup de succès dans vos recherches futures et vous remercions encore une fois pour l'intérêt que vous avez porté à ${this.jobapp.company}.`,
+                text: emailMessages.secondParagraph,
                 size: fontSize,
               }),
             ]
@@ -88,7 +98,7 @@ export class JobapplicationComponent {
           new Paragraph({
             children: [
               new TextRun({
-                text: "Cordialement,",
+                text: emailMessages.closing,
                 size: fontSize,
               }),
             ]
