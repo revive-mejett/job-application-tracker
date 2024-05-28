@@ -49,7 +49,7 @@ export class JobapplicationComponent {
 
     
     this.rejectionGeneratorService.setEmailMessages("Sova", this.jobapp.company, this.jobapp.position)
-    const emailMessages : RejectionMessage = this.rejectionGeneratorService.getEmailMessages() as RejectionMessage
+    const emailMessages : RejectionMessage = this.rejectionGeneratorService.getGeneratedEmailMessage() as RejectionMessage
 
     //word document
     const wordDoc = new Document({
@@ -59,7 +59,7 @@ export class JobapplicationComponent {
           new Paragraph({
             children: [
               new TextRun({
-                text: this.jobapp.updatedOn.toLocaleDateString("fr-fr", options),
+                text: this.jobapp.updatedOn.toLocaleDateString(emailMessages.language, options),
                 size: fontSize,
               }),
             ]
