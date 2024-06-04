@@ -41,8 +41,7 @@ export class HomeComponent {
   }
 
   addItem(company: string, position: string, location: string, employmentType: EmploymentType, commute: CommuteType, notes: string[], status : ApplicationStatus) {
-    console.log("called");
-    
+ 
     this.jobApplications.unshift({
       company: company,
       position: position,
@@ -75,15 +74,11 @@ export class HomeComponent {
   
   //save the list
   saveItems() {
-    console.log("saveee");
-    
     localStorage.setItem("jobApps", JSON.stringify(this.jobApplications))
   }
 
   //clear all items
   clearItems() {
-    console.log("clearedddd");
-    
     localStorage.removeItem("jobApps")
   }
 }

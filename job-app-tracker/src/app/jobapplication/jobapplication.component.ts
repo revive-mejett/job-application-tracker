@@ -30,7 +30,7 @@ export class JobapplicationComponent {
   updateItem(newStatus: string, noteInput: string) {
     this.jobapp.status = newStatus as ApplicationStatus
     this.isEditing = false
-    this.jobapp.updatedOn = new Date(2022, 0, 16)
+    this.jobapp.updatedOn = new Date()
     this.jobapp.notes.push(noteInput)
   }
 
