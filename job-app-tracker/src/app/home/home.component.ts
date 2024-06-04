@@ -55,9 +55,10 @@ export class HomeComponent {
       updatedOn: new Date(),
     })
 
-    //save the list
-    localStorage.setItem("jobApps", JSON.stringify(this.jobApplications))
+    
   }
+
+
 
   onSubmit() {
     const formValues = this.applyForm.value
@@ -70,5 +71,19 @@ export class HomeComponent {
       formValues.notes!.trim() !== "" ? [formValues.notes!.trim()] : ["N/A"],
       formValues.status?.trim() as ApplicationStatus ?? "Not Applied"
     )
+  }
+  
+  //save the list
+  saveItems() {
+    console.log("saveee");
+    
+    localStorage.setItem("jobApps", JSON.stringify(this.jobApplications))
+  }
+
+  //clear all items
+  clearItems() {
+    console.log("clearedddd");
+    
+    localStorage.removeItem("jobApps")
   }
 }
