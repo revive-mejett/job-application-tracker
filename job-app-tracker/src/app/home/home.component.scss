@@ -29,6 +29,14 @@ td {
     }
 }
 
+.list-action-menu-section {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+        @include button-ui
+    }
+}
+
 .create-job-app-section {
     width: 50vw;
     .create-job-app-form {

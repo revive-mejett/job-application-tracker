@@ -18,6 +18,15 @@
     </div>
 </section>
 
+<section class="list-action-menu-section">
+    <button (click)="saveItems()" class="btn-save-items">
+        Save Job Applications
+    </button>
+    <button (click)="clearItems()" class="btn-clear-items">
+        Clear Job Applications
+    </button>
+</section>
+
 <section class="create-job-app-section">
     <h2>Add a job application</h2>
     <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="applyForm" class="create-job-app-form">
