@@ -25,46 +25,19 @@ export class HomeComponent {
     notes: new FormControl(""),
   })
 
+  
+
 
   /**
    * Set job applications field
    */
   constructor() {
-    this.jobApplications = [
-      {
-        company: "Ubisoft",
-        position: "Junior Dev",
-        location: "Montreal",
-        employmentType: "Full-time",
-        commute: "On-site",
-        notes: ["Sample note 1", "Sample note 2, its a remote position"],
-        status: "Not Applied",
-        dateApplied: new Date(),
-        updatedOn: new Date(),
-      },
-      {
-        company: "Ubisoft",
-        position: "Junior Dev",
-        location: "Montreal",
-        employmentType: "Full-time",
-        commute: "On-site",
-        notes: ["Test note 1", "Ghosted test note"],
-        status: "Not Applied",
-        dateApplied: new Date(),
-        updatedOn: new Date(),
-      },
-      {
-        company: "Ubisoft",
-        position: "Junior Dev",
-        location: "Montreal",
-        employmentType: "Full-time",
-        commute: "On-site",
-        notes: ["this is a fake posting, test data"],
-        status: "Not Applied",
-        dateApplied: new Date(),
-        updatedOn: new Date(),
-      }
-    ]
+    let jobApplicationString : string | null = localStorage.getItem("jobApps") ?? ""
+    this.jobApplications = jobApplicationString !== "" ? JSON.parse(jobApplicationString) : []
+    this.jobApplications.map(app => {
+      app.dateApplied = new Date(app.dateApplied!)
+      app.updatedOn = new Date(app.updatedOn!)
+    })
   }
 
   addItem(company: string, position: string, location: string, employmentType: EmploymentType, commute: CommuteType, notes: string[], status : ApplicationStatus) {
@@ -81,6 +54,9 @@ export class HomeComponent {
       dateApplied: new Date(),
       updatedOn: new Date(),
     })
+
+    //save the list
+    localStorage.setItem("jobApps", JSON.stringify(this.jobApplications))
   }
 
   onSubmit() {
