@@ -7,6 +7,34 @@
     grid-template-columns: repeat(8, 1fr) 30% 100px;
     border: 1px solid $col-text;
 
+
+    ul {
+        padding: 0;
+        .note-item {
+            background-color: white;
+            list-style-type: none;
+            margin: 0.5em 0;
+            padding: 0.25em;
+            text-align: center;
+        }
+    }
+
+    .edit-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        div {
+            width: 95%;
+            height: 100%;
+
+            button {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
 }
 
 h3 {
