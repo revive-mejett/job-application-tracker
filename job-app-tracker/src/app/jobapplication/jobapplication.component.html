@@ -11,12 +11,12 @@
     <div>{{ jobapp.status }}</div>
     <div>
         <ul>
-            <li *ngFor="let note of jobapp.notes">
+            <li *ngFor="let note of jobapp.notes" class="note-item">
                 {{note}}
             </li>
         </ul>
     </div>
-    <div>
+    <div class="edit-button-container">
         <div *ngIf="!isEditing">
             <button (click)="onClick()">Edit</button>
         </div>
